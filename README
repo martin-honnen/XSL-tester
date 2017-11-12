@@ -4,15 +4,17 @@ XSL Tester
 Transform your XML with XSLT online
 
 Choose between the following engines:
-- Saxon 9.5.1.6 HE,
+- Saxon 9.8.0.6 HE,
 - Saxon 9.5.1.6 EE,
 - Saxon 6.5.5, or
 - Xalan 2.7.1
 
-A version is available on http://xsltransform.net
 
 Changelog
 ====================
+
+Version 2.0
+- Updating to Saxon 9.8 HE to have XSLT 3 standard support
 
 Version 1.2
 - Preview of PDF or HTML when results are results are in the correct format / doctype
