@@ -37,12 +37,12 @@ public class Application extends Controller {
     private static final Map<String, TransformerPlugin> PLUGINS;
     static {
         PLUGINS = new HashMap<>();
-        PLUGINS.put("Saxon9", new Saxon9HEPlugin());
+        PLUGINS.put("Saxon98HE", new Saxon9HEPlugin());
         PLUGINS.put("Saxon9EE", new Saxon9EEPlugin());
         PLUGINS.put("Saxon6", new Saxon6Plugin());
         PLUGINS.put("Xalan2", new Xalan2Plugin());
     }
-    private static final String DEFAULT_ENGINE = "Saxon9";
+    private static final String DEFAULT_ENGINE = "Saxon98HE";
 
     public static class Files {
         public String id_slug;
@@ -120,7 +120,7 @@ public class Application extends Controller {
         try {
             ByteArrayOutputStream pdf = new ByteArrayOutputStream();
             Fop fop = FOP_FACTORY.newFop(MimeConstants.MIME_PDF, pdf);
-            transformer = PLUGINS.get("Saxon9").newTransformer();
+            transformer = PLUGINS.get("Saxon98HE").newTransformer();
             transformer.transform(new StreamSource(new StringReader(files.result)), new SAXResult(fop.getDefaultHandler()));
             return ok(pdf.toByteArray()).as("application/pdf");
         } catch (TransformerException e) {
